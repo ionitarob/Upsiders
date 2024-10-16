@@ -4,7 +4,6 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    background: #f0f0f0;
     scroll-behavior: smooth;
 }
 
@@ -12,17 +11,19 @@ body {
 .hero {
     background: url('banner2.png') no-repeat center center/cover;
     height: 100vh;
-    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #fff;
+    position: relative;
+    background-attachment: fixed;
 }
 
 .hero-overlay {
     background: rgba(0, 0, 0, 0.5);
     text-align: center;
     padding: 20px;
+    border-radius: 10px; /* Añadido para un diseño más suave */
 }
 
 .logo {
@@ -30,10 +31,11 @@ body {
     margin-bottom: 20px;
 }
 
+/* Navigation */
 nav ul {
     list-style: none;
     padding: 0;
-    margin-top: 20px;
+    margin: 20px 0 0;
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -45,27 +47,49 @@ nav ul li a {
     padding: 10px 20px;
     border: 2px solid #fff;
     border-radius: 5px;
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
 }
 
 nav ul li a:hover {
-    background-color: #fff;
+    background-color: #ffffff;
     color: #000;
+    transform: scale(1.05); /* Slightly increases size on hover */
 }
 
 /* Sections */
 .section {
     padding: 60px 20px;
-    background-color: #fff;
     max-width: 1200px;
     margin: 20px auto;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
+    background: none;
+}
+
+/* Backgrounds for each section */
+#about {
+    background: url('bimage.gif') no-repeat center center/cover;
+    color: #ffffff; /* Light Cyan */
+}
+
+#mission {
+    background: url('bimage3.gif') no-repeat center center/cover; /* Light Orange */
+    color: #ffffff; /* Dark Orange */
+}
+
+#team {
+    background: url('bimage2.gif') no-repeat center center/cover; /* Light Green */
+    color: #ffffff; /* Dark Green */
+}
+
+#socials {
+    background-color: #000000; /* Light Blue */
+    color: #858a92; /* Dark Blue */
 }
 
 .mission {
-    background-color: #f9f9f9;
+    background-color: #f9f9f9; /* Soft background for mission */
 }
 
 .team-grid {
@@ -88,7 +112,7 @@ nav ul li a:hover {
 }
 
 .social-btn:hover img {
-    transform: scale(1.1);
+    transform: scale(1.1); /* Increases size on hover */
 }
 
 /* Scroll to Top Button */
@@ -100,12 +124,14 @@ nav ul li a:hover {
     color: #fff;
     padding: 10px 15px;
     border-radius: 50%;
-    display: none;
+    display: none; /* Hidden by default */
     cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s; /* Transition for smooth effect */
 }
 
 .scroll-top:hover {
     background-color: #555;
+    transform: scale(1.1); /* Slight increase on hover */
 }
 
 /* Footer */
@@ -116,9 +142,18 @@ footer {
     text-align: center;
 }
 
+/* Media Queries */
 @media (max-width: 768px) {
     nav ul {
         flex-direction: column;
+        align-items: center; /* Center the items */
+    }
+
+    .hero {
+        height: 70vh; /* Adjust height on mobile devices */
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr; /* Show one item per row on mobile */
     }
 }
-
