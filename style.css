@@ -74,7 +74,7 @@ body, html {
     color: #ffffff;
     text-decoration: none;
     border-radius: 1rem;
-    font-size: 1rem;
+    font-size: 1.4rem;
     transition: all 0.3s ease;
 }
 .nav a:hover {
