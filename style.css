@@ -9,7 +9,9 @@ body, html {
     line-height: 1.6;
     color: white;
 }
-.logo img {
+.logo {
+    background-image: url('/img/Upsiders.png');
+    background-size: 256px;
     width: 256px;
     height: 256px;
 } 
